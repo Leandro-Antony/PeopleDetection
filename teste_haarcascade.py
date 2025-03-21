@@ -18,7 +18,7 @@ cap = cv2.VideoCapture(0)
 #    exit()
 
 font = cv2.FONT_HERSHEY_SIMPLEX
-pos = (20, 50)
+pos = (20, 50) 
 fontScale = 1
 fontColor = (0,0,255)
 thickness = 1
@@ -26,7 +26,12 @@ lineType = 2
 
 while True:
     # Read the frame
-    frame = cap.read()#cam
+    ret, frame = cap.read()#cam
+
+    if not ret:
+        print("Falha de leitura")
+        break
+
     #converte a imagem para escala de cinza
     cinza = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
@@ -57,5 +62,5 @@ while True:
     cv2.imshow('reconhecimento', frame)
     if cv2.waitKey(27) & 0xFF == ord('q'):
         break
-#cap.release()
+cap.release()
 cv2.destroyAllWindows()
