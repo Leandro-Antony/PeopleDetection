@@ -10,7 +10,7 @@ def moving_average(signal, window_size):
 np.set_printoptions(threshold=np.inf)
 
 # Carrega a imagem
-img = cv2.imread(r'imgs\threepersons.jpeg')
+img = cv2.imread(r'imgs\classroom.jpg')
 
 # Converte a imagem para escala de cinza
 cinza = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
