@@ -18,7 +18,7 @@ while True:
     #Realiza a detecção de objetos no frame atual
     resultados = modelo(frame)
 
-    n_pessoas = len(resultados[0].boxes)
+    n_pessoas = len(resultados[0].data)
     print("Número de pessoas detectadas:", n_pessoas)
 
     #Desenha as detecções no frame
